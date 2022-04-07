@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  irace:
+    build: 
+      image: irace
+      context: .
+      args:
+        - UNAME=$USER
+        - UID=$UID
+        - GID=$GID
+
