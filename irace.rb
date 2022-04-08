@@ -32,12 +32,12 @@ class Irace < Formula
   end
 
   test do
-      system "R_LIBS=#{opt_prefix}/r-lib #{bin}/irace"
+      system "R_LIBS=#{opt_prefix}/r-lib #{bin}/irace -v"
   end
 
   def caveats
     <<~EOS
-      You need to let R know the installation of the irace package by setting an environment variable
+      You need to let R know the installation of the irace package by setting an environment variable (and add it to your ~/.profile, ~/.bashrc or ~/.zshrc for it to persist)
         $ export R_LIBS="#{opt_prefix}/r-lib"
     EOS
   end
