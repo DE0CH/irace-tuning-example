@@ -19,8 +19,8 @@ RUN .linuxbrew/bin/brew update --force --quiet
 ENV PATH="/home/${UNAME}/.linuxbrew/bin:${PATH}"
 RUN echo $PATH
 
-RUN brew install gcc
-RUN brew install R
-RUN rscript -e 'install.packages("irace", repos = "http://cran.us.r-project.org")'
-RUN export IRACE_HOME=$(rscript -e 'cat(system.file(package="irace", "bin", mustWork=TRUE))')
-ENV PATH="${IRACE_HOME}:${PATH}"
+COPY irace.rb irace.rb
+RUN brew install ./irace.rb
+# RUN rscript -e 'install.packages("irace", repos = "http://cran.us.r-project.org")'
+# RUN export IRACE_HOME=$(rscript -e 'cat(system.file(package="irace", "bin", mustWork=TRUE))')
+# ENV PATH="${IRACE_HOME}:${PATH}"
