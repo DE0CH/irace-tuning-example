@@ -35,7 +35,7 @@ digits = 2
 
 ## A value of 0 silences all debug messages. Higher values provide
 ## more verbose debug messages.
-debugLevel = 1
+debugLevel = 0
 
 ## END of scenario file
 ############################################################################

@@ -7,3 +7,6 @@ build:
 
 clean:
 	docker rm irace
+
+run:
+	docker run -v ${PWD}:/usr/app irace irace

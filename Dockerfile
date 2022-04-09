@@ -21,6 +21,9 @@ RUN echo $PATH
 COPY irace.rb irace.rb
 RUN brew install --build-from-source ./irace.rb
 ENV R_LIBS="/home/${UNAME}/.linuxbrew/opt/irace/r-lib"
+
+WORKDIR /usr/app
+CMD irace
 # RUN rscript -e 'install.packages("irace", repos = "http://cran.us.r-project.org")'
 # RUN export IRACE_HOME=$(rscript -e 'cat(system.file(package="irace", "bin", mustWork=TRUE))')
 # ENV PATH="${IRACE_HOME}:${PATH}"
